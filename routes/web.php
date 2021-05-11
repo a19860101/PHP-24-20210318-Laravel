@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/post','PostController@index');
-Route::get('/post/create','PostController@create');
-Route::post('/post','PostController@store');
+Route::get('/post','PostController@index')->name('post.index');
+Route::get('/post/create','PostController@create')->name('post.create');
+Route::post('/post','PostController@store')->name('post.store');
 Route::get('/about',function(){
     return view('about');
 });

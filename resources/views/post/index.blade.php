@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+
+    <nav>
+        <a href="{{route('post.create')}}">我要發文</a>
+        <a href="/post/create">我要發文</a>
+    </nav>
     <h1>Post Index</h1>
     @foreach($posts as $post)
     <div>
