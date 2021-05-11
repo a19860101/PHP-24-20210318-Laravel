@@ -9,5 +9,10 @@
 </div>
 <div>
     <a href="{{route('post.index')}}">文章列表</a>
+    <form action="{{route('post.delete',['post'=>$post->id])}}" method="post">
+        @csrf
+        @method('delete')
+        <input type="submit" value="刪除文章">
+    </form>
 </div>
 @endsection
