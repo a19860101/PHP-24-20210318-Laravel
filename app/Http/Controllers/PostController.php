@@ -53,9 +53,12 @@ class PostController extends Controller
         // $post->save();
 
         //方法三
-        $post = new Post;
-        $post->fill($request->all());
-        $post->save();
+        // $post = new Post;
+        // $post->fill($request->all());
+        // $post->save();
+
+        //方法四
+        Post::create($request->all());
 
         return redirect('/post');
     }
