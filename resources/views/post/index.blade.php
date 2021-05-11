@@ -10,6 +10,9 @@
             {{$post->content}}
         </div>
         <div>
+            <a href="{{route('post.show',['post'=>$post->id])}}">繼續閱讀</a>
+        </div>
+        <div>
             最後更新時間 {{$post->updated_at}}
         </div>
     </div>
