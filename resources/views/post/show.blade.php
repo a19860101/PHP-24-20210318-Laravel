@@ -9,6 +9,7 @@
 </div>
 <div>
     <a href="{{route('post.index')}}">文章列表</a>
+    <a href="{{route('post.edit',['post'=>$post->id])}}">編輯文章</a>
     <form action="{{route('post.delete',['post'=>$post->id])}}" method="post">
         @csrf
         @method('delete')
