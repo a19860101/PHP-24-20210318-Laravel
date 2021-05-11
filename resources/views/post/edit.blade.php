@@ -1,7 +1,7 @@
 @extends('template.master')
 @section('main')
     <h1>Post Edit</h1>
-    <form action="{{route('post.store')}}" method="post">
+    <form action="" method="post">
         @csrf
         <div>
             <label for="">文章標題</label>
