@@ -19,6 +19,11 @@
                 <div>
                     最後更新時間 {{$post->updated_at}}
                 </div>
+                <div>
+                    <?php Carbon\Carbon::setLocale('zh_TW'); ?>
+                    最後更新時間 {{Carbon\Carbon::parse($post->updated_at)->diffForHumans()}}
+                    發文時間 {{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}
+                </div>
             </div>
         @endforeach 
         </div>
