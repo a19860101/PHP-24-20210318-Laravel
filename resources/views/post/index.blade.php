@@ -11,7 +11,7 @@
             <div class="col-lg-8 col-10 my-3 p-4 border border-secondary rounded">
                 <h2 class="my-3">{{$post->title}}</h2>
                 <div class="my-3">
-                    {{$post->content}}
+                    {{ Str::limit(strip_tags($post->content),200) }}
                 </div>
                 <div class="my-3 text-end">
                     <a href="{{route('post.show',['post'=>$post->id])}}" class="btn btn-outline-primary">繼續閱讀</a>
