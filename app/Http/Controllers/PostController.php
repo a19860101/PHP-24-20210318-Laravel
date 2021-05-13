@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -70,8 +71,14 @@ class PostController extends Controller
         // return redirect('/post');
 
         // return $request->file('cover')->store('public/images');
-        $cover = md5(time());
-        return $request->file('cover')->storeAs('public/images', $cover);
+        // $cover = md5(time());
+        // return $request->file('cover')->storeAs('public/images', $cover);
+
+        $ext = $request->file('cover')->getClientOriginalExtension();
+        // $cover = Str::uuid().'.'.$ext;
+        $cover = md5(time()).'.'.$ext;
+
+        return $cover;
 
     }
 
