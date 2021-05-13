@@ -1,8 +1,9 @@
 @extends('template.master')
 @section('main')
     <h1>Post Edit</h1>
-    <form action="" method="post">
+    <form action="{{route('post.update',['post'=>$post->id])}}" method="post">
         @csrf
+        @method('put')
         <div>
             <label for="">文章標題</label>
             <input type="text" name="title" value="{{$post->title}}">
