@@ -77,8 +77,14 @@ class PostController extends Controller
         $ext = $request->file('cover')->getClientOriginalExtension();
         // $cover = Str::uuid().'.'.$ext;
         $cover = md5(time()).'.'.$ext;
-
-        return $cover;
+        $request->file('cover')->storeAs('public/images',$cover);
+        
+        $post = new Post;
+        $post->fill($request->all());
+        $post->cover = $cover;
+        $post->save();
+        
+        return redirect()->route('post.index');
 
     }
 
