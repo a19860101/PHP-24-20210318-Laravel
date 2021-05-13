@@ -1,21 +1,28 @@
 @extends('template.master')
 
 @section('main')
-    
-    <h1>Post Index</h1>
-    @foreach($posts as $post)
-    <div>
-        <h2>{{$post->title}}</h2>
-        <div>
-            {{$post->content}}
-        </div>
-        <div>
-            <a href="{{route('post.show',['post'=>$post->id])}}">繼續閱讀</a>
-        </div>
-        <div>
-            最後更新時間 {{$post->updated_at}}
+    <div class="container">
+        <div class="row  justify-content-center">
+            <div class="col-lg-8 col-10">
+                <h1>所有文章</h1>
+                <hr>
+            </div>
+        @foreach($posts as $post)
+            <div class="col-lg-8 col-10 my-3 p-4 border border-secondary rounded">
+                <h2 class="my-3">{{$post->title}}</h2>
+                <div class="my-3">
+                    {{$post->content}}
+                </div>
+                <div class="my-3 text-end">
+                    <a href="{{route('post.show',['post'=>$post->id])}}" class="btn btn-outline-primary">繼續閱讀</a>
+                </div>
+                <div>
+                    最後更新時間 {{$post->updated_at}}
+                </div>
+            </div>
+        @endforeach 
         </div>
     </div>
-    @endforeach 
+    
 
 @endsection
