@@ -10,6 +10,7 @@
         @foreach($posts as $post)
             <div class="col-lg-8 col-10 my-3 p-4 border border-secondary rounded">
                 <h2 class="my-3">{{$post->title}}</h2>
+                <img src="{{asset('storage/images/'.$post->cover)}}" width="100%">
                 <div class="my-3">
                     {{ Str::limit(strip_tags($post->content),200) }}
                 </div>
