@@ -7,11 +7,15 @@
                 <hr>
             </div>
             <div class="col-lg-8 col-10">
-                <form action="{{route('post.store')}}" method="post">
+                <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="" class="form-label">文章標題</label>
                         <input type="text" name="title" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">上傳封面圖</label>
+                        <input type="file" name="cover">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">內文</label>

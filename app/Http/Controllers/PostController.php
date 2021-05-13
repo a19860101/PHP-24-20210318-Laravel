@@ -65,9 +65,14 @@ class PostController extends Controller
         // $post->save();
 
         //方法四
-        Post::create($request->all());
+        // Post::create($request->all());
 
-        return redirect('/post');
+        // return redirect('/post');
+
+        // return $request->file('cover')->store('public/images');
+        $cover = md5(time());
+        return $request->file('cover')->storeAs('public/images', $cover);
+
     }
 
     /**
