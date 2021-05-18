@@ -19,6 +19,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{route('post.create')}}">我要發文</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="">新增分類</a>
+                </li>
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="搜尋文章" aria-label="Search">
