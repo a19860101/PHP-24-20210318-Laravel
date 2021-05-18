@@ -8,4 +8,8 @@ class Post extends Model
 {
     //
     protected $fillable = ['title','content'];
+
+    public function category(){
+        return $this->belongsTo('App\Category');
+    }
 }
