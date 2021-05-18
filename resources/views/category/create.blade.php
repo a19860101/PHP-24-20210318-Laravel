@@ -28,10 +28,10 @@
                 @foreach($categories as $category)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     {{$category->title}}
-                    <form action="{{route('category.destroy',['category'=>$category->id])}}">
+                    <form action="{{route('category.destroy',['category'=>$category->id])}}" method="post">
                         @csrf
                         @method('delete')
-                        <input type="submit" class="btn btn-danger" value="刪除">
+                        <input type="submit" class="btn btn-danger" value="刪除" onclick="return confirm('確認刪除？')">
                     </form>
                 </li>
                 @endforeach
