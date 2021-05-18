@@ -22,8 +22,8 @@
         @foreach($posts as $post)
             <div class="col-lg-8 col-10 my-3 p-4 border border-secondary rounded">
                 <h2 class="my-3">{{$post->title}}</h2>
-                <div>
-                    分類:{{$post->category_id}}
+                <div class="my-3">
+                    分類:<span class="badge bg-warning">{{$post->category->title}}</span>
                 </div>
                 <div class="cover">
                     <img src="{{asset('storage/images/'.$post->cover)}}" width="100%">
