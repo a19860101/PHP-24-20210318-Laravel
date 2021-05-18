@@ -74,10 +74,14 @@ class PostController extends Controller
         // $cover = md5(time());
         // return $request->file('cover')->storeAs('public/images', $cover);
 
-        $ext = $request->file('cover')->getClientOriginalExtension();
-        // $cover = Str::uuid().'.'.$ext;
-        $cover = md5(time()).'.'.$ext;
-        $request->file('cover')->storeAs('public/images',$cover);
+        if($request->file('cover')){        
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            // $cover = Str::uuid().'.'.$ext;
+            $cover = md5(time()).'.'.$ext;
+            $request->file('cover')->storeAs('public/images',$cover);
+        }else{
+            $cover = 'question-marks.jpg';
+        }
         
         $post = new Post;
         $post->fill($request->all());
