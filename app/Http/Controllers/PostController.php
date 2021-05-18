@@ -88,6 +88,7 @@ class PostController extends Controller
         $post = new Post;
         $post->fill($request->all());
         $post->cover = $cover;
+        $post->category_id = $request->category_id;
         $post->save();
         
         return redirect()->route('post.index');

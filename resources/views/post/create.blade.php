@@ -40,7 +40,7 @@
         tinymce.init({
             selector: '#content',
             language: 'zh_TW',
-            menubar: false,
+            menubar: true,
             plugins: 'image code link imagetools lists',
             toolbar: 'undo redo | image code link| styleselect bullist numlist| bold italic forecolor underline strikethrough | alignleft aligncenter alignright alignjustify | outdent indent',
             // images_upload_url: 'postAcceptor.php',
