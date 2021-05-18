@@ -18,6 +18,14 @@
                         <input type="file" name="cover">
                     </div>
                     <div class="mb-3">
+                        <label for="" class="form-label">文章分類</label>
+                        <select name="category_id" id="" class="form-select">
+                            @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->title}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label for="" class="form-label">內文</label>
                         <textarea name="content" id="content"  rows="20" class="form-control"></textarea>
                     </div>

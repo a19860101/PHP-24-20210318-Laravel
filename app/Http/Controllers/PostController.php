@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -35,7 +36,8 @@ class PostController extends Controller
     public function create()
     {
         //
-        return view('post.create');
+        $categories = Category::get();
+        return view('post.create',compact('categories'));
     }
 
     /**
