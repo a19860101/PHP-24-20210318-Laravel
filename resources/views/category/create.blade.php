@@ -25,9 +25,16 @@
             <h2>所有分類</h2>
             <br>
             <ul class="list-group">
-                <li class="list-group-item">
-                    科技
+                @foreach($categories as $category)
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{$category->title}}
+                    <form action="{{route('category.destroy',['category'=>$category->id])}}">
+                        @csrf
+                        @method('delete')
+                        <input type="submit" class="btn btn-danger" value="刪除">
+                    </form>
                 </li>
+                @endforeach
             </ul>
         </div>
     </div>
