@@ -6,6 +6,7 @@ use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -89,6 +90,7 @@ class PostController extends Controller
         $post->fill($request->all());
         $post->cover = $cover;
         $post->category_id = $request->category_id;
+        $post->user_id = Auth::id();
         $post->save();
         
         return redirect()->route('post.index');
