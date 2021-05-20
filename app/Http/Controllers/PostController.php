@@ -154,7 +154,7 @@ class PostController extends Controller
     }
 
     public function postWithCategory(Category $category){
-        return $category->posts;
-        // return view('post.post_category');
+        $posts = $category->posts;
+        return view('post.post_category',compact('posts'));
     }
 }
