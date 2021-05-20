@@ -32,4 +32,15 @@ Route::resource('/category','CategoryController');
 
 Auth::routes();
 
+//自訂logout
+Route::get('/logout','App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+// Route::get('/logout',function(){
+//     Auth::logout();
+//     return view('logout');
+// })->name('logout');
+
+Route::get('/logout/success',function(){
+    return view('logout');
+})->name('logout.success');
+
 Route::get('/home', 'HomeController@index')->name('home');
