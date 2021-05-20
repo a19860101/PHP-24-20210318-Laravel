@@ -153,7 +153,8 @@ class PostController extends Controller
         return redirect()->route('post.index');
     }
 
-    public function postWithCategory(){
-        return 'postWithCategory';
+    public function postWithCategory(Category $category){
+        return $category->posts;
+        // return view('post.post_category');
     }
 }

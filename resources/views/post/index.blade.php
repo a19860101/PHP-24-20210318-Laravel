@@ -24,7 +24,7 @@
                 <h2 class="my-3">{{$post->title}}</h2>
                 <div class="my-3">
                     分類:
-                    <a href="{{route('post.category')}}">
+                    <a href="{{route('post.category',['category'=>$post->category_id])}}">
                         <span class="badge bg-warning">{{$post->category->title}}</span>
                     </a>
                 </div>

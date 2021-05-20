@@ -23,7 +23,8 @@ Route::get('/post/{post}','PostController@show')->name('post.show');
 Route::delete('/post/{post}','PostController@destroy')->name('post.delete');
 Route::get('/post/{post}/edit','PostController@edit')->name('post.edit');
 Route::put('/post/{post}','PostController@update')->name('post.update');
-Route::get('/post-category','PostController@postWithCategory')->name('post.category');
+
+Route::get('/post-category/{category}','PostController@postWithCategory')->name('post.category');
 
 Route::resource('/category','CategoryController');
 
