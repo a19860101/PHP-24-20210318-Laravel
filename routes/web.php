@@ -29,3 +29,7 @@ Route::get('/post-category/{category}','PostController@postWithCategory')->name(
 Route::resource('/category','CategoryController');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
